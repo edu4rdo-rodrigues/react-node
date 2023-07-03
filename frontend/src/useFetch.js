@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 
 const api = axios.create({
-    baseURL: `http://localhost:5000/`
+    baseURL: `http://82.180.137.228/`
 })
 
 export function useFetch(url) {
