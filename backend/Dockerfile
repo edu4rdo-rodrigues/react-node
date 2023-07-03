@@ -1,8 +1,9 @@
 FROM node:alpine 
 
-WORKDIR /usr/app
+WORKDIR /react-node/backend
 
 COPY package*.json ./
+
 RUN npm install
 
 COPY . .
