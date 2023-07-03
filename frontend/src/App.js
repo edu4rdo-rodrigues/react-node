@@ -2,12 +2,12 @@ import { useFetch } from './useFetch';
 
 function App() {
 
-  const {res} = useFetch('noticias')
+  const {data} = useFetch('noticias')
 
   return (
     <div>
       <ul>
-        {res?.map((data, index) => (
+        {data?.map((data, index) => (
           <li key={index}>{data.titulo}</li>
         ))}
       </ul>
