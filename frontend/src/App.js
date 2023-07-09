@@ -1,9 +1,13 @@
+import { useEffect } from 'react';
 import { useFetch } from './useFetch';
 
 function App() {
 
   const {data, err} = useFetch('noticias');
-  console.log('Erro: ', err);
+
+  useEffect(()=>{
+    console.log('Erro - App.js: ', err);
+  },[]);  
   
   return (
     <div>
