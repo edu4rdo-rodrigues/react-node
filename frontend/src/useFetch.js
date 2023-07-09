@@ -2,26 +2,28 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 
 const api = axios.create({
-    baseURL: `http://82.180.137.228/5000/`
+    baseURL: `http://82.180.137.228:5000/`
 })
 
 export function useFetch(url) {
     const [data, setData] = useState()
 
-    const [error, setError] = useState()
+    const [err, setErr] = useState()
 
     useEffect(() => {
         api.get(url)
           .then(response => {
             setData(response.data)
+            console.log('then', response);
           })
           .catch( err => {
-            setError(err)
+            setErr(err)
+            console.log('catch err: ', err);
           })
           .finally(() => {
-            console.log('OK');
+            console.log('finally OK');
           })
     }, [])
 
-    return { data, error }
+    return { data, err }
 }

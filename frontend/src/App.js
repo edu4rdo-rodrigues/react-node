@@ -2,8 +2,9 @@ import { useFetch } from './useFetch';
 
 function App() {
 
-  const {data} = useFetch('noticias')
-
+  const {data, err} = useFetch('noticias');
+  console.log('Erro: ', err);
+  
   return (
     <div>
       <ul>
@@ -16,3 +17,4 @@ function App() {
 }
 
 export default App;
+
